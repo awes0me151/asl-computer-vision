@@ -1,0 +1,22 @@
+#main {
+    text-align: center;
+    font-size: 20px;
+}
+
+#correctcount {
+    color: green;
+}
+#incorrectcount {
+    color: red;
+}
+#prediction {
+    font-weight: bold;
+}
+
+button {
+    font-size: 24px;
+}
+
+#file {
+    font-size: 15px;
+}
