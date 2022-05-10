@@ -1,26 +1,35 @@
-<head> 
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-    <script src="script.js"></script> 
-    <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
-    <div id="main">
-        <h1>Welcome to the ASL Alphabet Translator!</h1>
-        <h4>Instructions: Upload a picture of an ASL sign in the English alphabet (as well as space, delete, or a blank image). The model will predict the corresponding letter. After a prediction has been made, click the button to indicate whether the prediction was correct or not. Stats are not tracked across sessions. Enjoy!
+<html>
+    <head> 
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+        <script src="script.js"></script> 
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <div id="main">
+            <div id="content-wrap">
+                <h1>Welcome to the ASL Alphabet Translator!</h1>
+                <h4>Instructions: Upload a picture of an ASL sign in the English alphabet (as well as space, delete, or a blank image). The model will predict the label of this image. After a prediction has been made, click the button to indicate whether the prediction was correct or not. Stats are not tracked across sessions. Enjoy!
+                </h4>
+                <p>If you want to learn more about how this model was trained and tuned, <a href="info.html" title="Go to Neural Network Info">click here!</a></p>
+        
+                <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+                <!-- <p><label for="file" style="cursor: pointer;">Upload Image</label></p> -->
+                <p><img id="output" width="200" /></p>
+        
+                <button id="pred" onclick="predict(model);increment()">Predict</button>
+                <p id="count">Total: 0</p>
+                <p id="correctcount">Correct: 0</p>
+                <p id="incorrectcount">Incorrect: 0</p>
+        
+                <p id="prediction"></p>
+                <p id="question"></p>
+                <button id = "correct" onclick="correct()" hidden="hidden">Yes</button>
+                <button id = "incorrect" onclick="incorrect()" hidden ="hidden">No</button>
+            </div>
+            <footer id = "footer">
+                <p>Made by Justin Lau. Images uploaded to this site will <b>not be stored nor used</b> in any way whatsoever. Check out my other work <a href="https://github.com/awes0me151" target="_blank">here</a>.</p>
+            </footer>
+        </div>
+    </body>
+</html>
 
-        </h4>
-        <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
-        <!-- <p><label for="file" style="cursor: pointer;">Upload Image</label></p> -->
-        <p><img id="output" width="200" /></p>
-
-        <button id="pred" onclick="predict(model);increment()">Predict</button>
-        <p id="count">0 predictions made!</p>
-        <p id="correctcount">0 correct predictions made!</p>
-        <p id="incorrectcount">0 incorrect predictions made!</p>
-
-        <p id="prediction"></p>
-        <p id="question"></p>
-        <button id = "correct" onclick="correct()" hidden="hidden">Yes</button>
-        <button id = "incorrect" onclick="incorrect()" hidden ="hidden">No</button>
-    </div>
-</body>

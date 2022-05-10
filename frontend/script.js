@@ -2,13 +2,15 @@
 const classes = ['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'del', 'nothing', 'space'];
 
 function increment() {
-    var value = parseInt(document.getElementById('count').innerHTML);
+    const str = document.getElementById('count').innerHTML;
+    const arr = str.match(/[0-9]+$/);
+    var value = arr[0];
     value++;
     if (value == 1) {
-        document.getElementById('count').innerHTML = "1 prediction made!";
+        document.getElementById('count').innerHTML = "Total Predictions: 1";
     }
     else {
-        document.getElementById('count').innerHTML = value + " predictions made!";
+        document.getElementById('count').innerHTML = "Total Predictions: " + value;
     }
 }
 
@@ -22,26 +24,32 @@ function swapbuttons() {
 }
 
 function correct() {
-    var value = parseInt(document.getElementById('correctcount').innerHTML);
+    const str = document.getElementById('correctcount').innerHTML;
+    const arr = str.match(/[0-9]+$/);
+    var value = arr[0];
     value++;
     if (value == 1) {
-        document.getElementById('correctcount').innerHTML = "1 correct prediction made!";
+        document.getElementById('correctcount').innerHTML = "Correct: 1";
     }
     else {
-        document.getElementById('correctcount').innerHTML = value + " correct predictions made!";
+        document.getElementById('correctcount').innerHTML = "Correct: " + value;
     }
+    document.getElementById('question').innerHTML = "Let's go! This is a piece of cake."
     swapbuttons();
 }
 
 function incorrect() {
-    var value = parseInt(document.getElementById('incorrectcount').innerHTML);
+    const str = document.getElementById('incorrectcount').innerHTML;
+    const arr = str.match(/[0-9]+$/);
+    var value = arr[0];
     value++;
     if (value == 1) {
-        document.getElementById('incorrectcount').innerHTML = "1 incorrect prediction made!";
+        document.getElementById('incorrectcount').innerHTML = "Incorrect: 1";
     }
     else {
-        document.getElementById('incorrectcount').innerHTML = value + " incorrect predictions made!";
+        document.getElementById('incorrectcount').innerHTML = "Incorrect: " + value;
     }
+    document.getElementById('question').innerHTML = "Aw man! I'll try harder next time."
     swapbuttons();
 }
 

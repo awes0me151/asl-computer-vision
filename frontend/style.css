@@ -1,6 +1,12 @@
 #main {
+    position: relative;
+    min-height: 92vh;
+  }
+
+#content-wrap {
     text-align: center;
     font-size: 20px;
+    padding-bottom: .25rem;
 }
 
 #correctcount {
@@ -15,8 +21,29 @@
 
 button {
     font-size: 24px;
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 #file {
     font-size: 15px;
 }
+
+#pred:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+#correct:hover {
+    background-color: green;
+}
+
+#incorrect:hover {
+    background-color: red;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: .25rem;
+  }
