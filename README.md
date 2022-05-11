@@ -1,7 +1,7 @@
 # asl-computer-vision
 
 ### Introduction
-This project was completed for my DS 4400 class (Machine Learning + Data Mining 1) during the Spring 2022 semester. In this project, my partner and I used neural networks to translate ASL signs into the English alphabet. Rather than compiling images of ourselves making signs for the dataset, we used [this dataset:](https://www.kaggle.com/grassknoted/asl-alphabet): 
+This project was completed for my DS 4400 class (Machine Learning + Data Mining 1) during the Spring 2022 semester. In this project, my partner and I used neural networks to translate ASL signs into the English alphabet. Rather than compiling images of ourselves making signs for the dataset, we used [this dataset](https://www.kaggle.com/grassknoted/asl-alphabet): 
 
 This is essentially a multiclass classification task, as we are classifying a given image into 1 of 29 classes: 
 - 26 (each letter of the English alphabet) 
