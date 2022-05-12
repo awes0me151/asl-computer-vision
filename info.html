@@ -1,6 +1,28 @@
-<head>
+<html>
+    <head> 
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+        <script src="script.js"></script> 
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <div id="main2">
+            <div id="content-wrap">
+                <a href="index.html">Go Back to Prediction Page</a>
+                <h2>What are the inputs and outputs to this model?</h2>
+                <p>The user uploads an image to the site as input, however this image is resized to 32 x 32 pixels regardless of its original size. The output of this model is 1 of 29 labels (A - Z, del, space, nothing - essentially a blank image). The model generates the probability of the image being in each class, and picks the label with the highest probability.</p>
+                <h2>What exactly is the model?</h2>
+                <p>The underlying model is a <a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53" target="_blank">convolutional neural network</a> (CNN) trained on a dataset of about 87,000 images. This CNN has 3 hidden layers, with 32, 64, and 64 filters respectively. In each hidden layer, the <a href="https://www.kaggle.com/code/dansbecker/rectified-linear-units-relu-in-deep-learning/notebook" target="_blank">relu</a> activation function is used. The output layer uses the softmax function to generate the probability distribution. </p>
+                <h2>Can I trust this model to make predictions?</h2>
+                <p>Yes, you should! This model was trained and tuned using Python and Jupyter Notebook, achieving an accuracy of about 97% on the testing dataset. However, this dataset was fairly limited, as the images were taken by one person in only a handful of environments. We cannot assume that the model will perform just as well with different lightings, backgrounds, and skin tones.</p>
+                <h2>Are there any differences between this model and the one you trained in Python?</h2>
+                <p>In terms of architecture and weights of the models, they are the exact same. Through Tensorflow and Tensorflow.js, I was able to save my Python model and load it directly into the webpage. However, the way input images are fed into the models may differ. Since I am not familiar with the Tensorflow.js library, I am not sure if I am reading the input image in correctly, which may affect the model's performance. I will definitely investigate this and make changes if necessary!</p>
+                <h2>Where can I see this Python model?</h2>
+                <p>You can check out my Python model in this <a href="https://github.com/awes0me151/asl-computer-vision">GitHub repository</a>. If you have Jupyter Notebook, feel free to download the data and run the file itself! If not, that's totally fine, there's a PDF file that captures the final outputs of each cell. Also, feel free to read the project report to gain more insight into our research, methodology, and conclusions!</p>
+            </div>
+            <footer id="footer">
+                <p>Made by Justin Lau. Images that you upload to this site will <b>not be stored nor used</b> in any way whatsoever. Check out my other work <a href="https://github.com/awes0me151" target="_blank">here</a>.</p>
+            </footer>
+        </div>
+    </body>
+</html>
 
-</head>
-<body>
-    <p>Hello</p>
-</body>
