@@ -2,15 +2,38 @@
 const classes = ['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'del', 'nothing', 'space'];
 
 function increment() {
-    const str = document.getElementById('count').innerHTML;
-    const arr = str.match(/[0-9]+$/);
-    var value = arr[0];
+    var value = getCount('count')
     value++;
     if (value == 1) {
         document.getElementById('count').innerHTML = "Total Predictions: 1";
     }
     else {
         document.getElementById('count').innerHTML = "Total Predictions: " + value;
+    }
+}
+
+function getCount(id) {
+    const str = document.getElementById(id).innerHTML;
+    const arr = str.match(/[0-9]+$/);
+    var val = parseInt(arr[0]);
+
+    return val;
+}
+    
+
+function computeAcc() {
+    var corr = getCount('correctcount')
+    var icorr = getCount('incorrectcount')
+
+    if(corr == 0) {
+        document.getElementById('acc').innerHTML = "Accuracy: 0";
+    }
+    else if (icorr == 0) {
+        document.getElementById('acc').innerHTML = "Accuracy: 1";
+    }
+    else {
+        const accuracy = corr / (corr + icorr);
+        document.getElementById('acc').innerHTML = "Accuracy: " + accuracy.toFixed(2);
     }
 }
 
@@ -24,9 +47,7 @@ function swapbuttons() {
 }
 
 function correct() {
-    const str = document.getElementById('correctcount').innerHTML;
-    const arr = str.match(/[0-9]+$/);
-    var value = arr[0];
+    var value = getCount('correctcount')
     value++;
     if (value == 1) {
         document.getElementById('correctcount').innerHTML = "Correct: 1";
@@ -36,12 +57,11 @@ function correct() {
     }
     document.getElementById('question').innerHTML = "Let's go! This is a piece of cake."
     swapbuttons();
+    computeAcc();
 }
 
 function incorrect() {
-    const str = document.getElementById('incorrectcount').innerHTML;
-    const arr = str.match(/[0-9]+$/);
-    var value = arr[0];
+    var value = getCount('incorrectcount')
     value++;
     if (value == 1) {
         document.getElementById('incorrectcount').innerHTML = "Incorrect: 1";
@@ -51,6 +71,7 @@ function incorrect() {
     }
     document.getElementById('question').innerHTML = "Aw man! I'll try harder next time."
     swapbuttons();
+    computeAcc();
 }
 
 function indexOfMax(arr) {

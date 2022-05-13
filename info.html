@@ -9,9 +9,10 @@
             <div id="content-wrap">
                 <a href="index.html">Go Back to Prediction Page</a>
                 <h2>What are the inputs and outputs to this model?</h2>
-                <p>The user uploads an image to the site as input, however this image is resized to 32 x 32 pixels regardless of its original size. The output of this model is 1 of 29 labels (A - Z, del, space, nothing - essentially a blank image). The model generates the probability of the image being in each class, and picks the label with the highest probability.</p>
+                <p>The user uploads an image to the site as input, however this image is resized to 32 x 32 pixels regardless of its original size. The output of this model is 1 of 29 labels (A - Z, del, space, nothing: essentially a blank image). The model generates the probability of the image being in each class, and picks the label with the highest probability.</p>
                 <h2>What exactly is the model?</h2>
                 <p>The underlying model is a <a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53" target="_blank">convolutional neural network</a> (CNN) trained on a dataset of about 87,000 images. This CNN has 3 hidden layers, with 32, 64, and 64 filters respectively. In each hidden layer, the <a href="https://www.kaggle.com/code/dansbecker/rectified-linear-units-relu-in-deep-learning/notebook" target="_blank">relu</a> activation function is used. The output layer uses the softmax function to generate the probability distribution. </p>
+                <img src="cnn.jpeg" alt="CNN Model" height="250">
                 <h2>Can I trust this model to make predictions?</h2>
                 <p>Yes, you should! This model was trained and tuned using Python and Jupyter Notebook, achieving an accuracy of about 97% on the testing dataset. However, this dataset was fairly limited, as the images were taken by one person in only a handful of environments. We cannot assume that the model will perform just as well with different lightings, backgrounds, and skin tones.</p>
                 <h2>Are there any differences between this model and the one you trained in Python?</h2>
