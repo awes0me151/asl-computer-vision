@@ -24,7 +24,7 @@ Next, we built various neural network architectures and compared their performan
 Overall, the neural networks had great performance, with testing accuracy of about 97%. I was able to understand how neural network architectures impact its performance. Although work has been done in this field already, I was able to learn more about neural networks and computer vision in practical applications. Feel free to look inside the notebook and report for more detailed findings!
 
 ### Next Steps
-One thing I would like to try is to create a front end for this website. In this website, a user can take a picture of themselves signing (or upload a picture of someone signing) and feed it into the pre-trained neural network, which will make a "live prediction". Furthermore, I would like to diversify my image dataset to account for more background noise, skin tone, and lighting variations. In addition, gestures also play a role in ASL which I would want to try to capture in a neural network. However, this would involve videos instead of images.
+I would like to diversify my image dataset to account for more background noise, skin tone, and lighting variations. In addition, gestures also play a role in ASL which I would want to try to capture in a neural network. However, this would involve videos instead of images.
 
 ### Technical Specifications
 In order to run this file, you will need the 64-bit installation of Python 3.7.6 or higher. You may also need to pip install various libaries, which are listed below:
@@ -43,4 +43,5 @@ pip install keras-metrics
 pip install scikeras
 ```
 
-**By Justin Lau and Tejas Sathyamurthi**
+### Update: Website created! (5/13/2022)
+I was able to create a website using [Tensorflow.js](https://www.tensorflow.org/js) that uses model 2 from my notebook! A user is able to upload an image and click a "predict" button that outputs a label. The user is then able to indicate whether the prediction was correct or not. The site keeps track of the total predictions made, as well as how many were correct or incorrect, along with an accuracy metric. In addition, there are short descriptions about the model itself and how it was trained. If you're interested in the final product, click [here](https://awes0me151.github.io/asl-computer-vision/).
